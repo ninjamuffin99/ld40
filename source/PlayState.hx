@@ -9,10 +9,14 @@ import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
+	
+	private var _messages:FlxSprite;
+	
 	override public function create():Void
 	{
-		
-		
+		_messages = new FlxSprite(0, 0);
+		_messages.makeGraphic(64, 64);
+		add(_messages);
 		
 		super.create();
 	}
