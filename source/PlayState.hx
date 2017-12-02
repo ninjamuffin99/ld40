@@ -12,35 +12,18 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	
-	private var _phone:Phone;
-	
-	private var _thumb:FlxSprite;
-	
+	private var _btnCreate:ButtonSprite;
 	
 	override public function create():Void
 	{
-		_phone = new Phone(150, 10);
-		add(_phone);
-		
-		_thumb = new FlxSprite(_phone.x + 30, _phone.y + 60);
-		_thumb.makeGraphic(40, 64, FlxColor.RED);
-		//add(_thumb);
+		_btnCreate = new ButtonSprite(0, 0, function(){FlxG.log.add("Pressed"); }, "Create");
+		add(_btnCreate);
 		
 		super.create();
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		super.update(elapsed);
-		
-		if (FlxG.mouse.overlaps(_phone))
-		{
-			_thumb.setPosition(FlxG.mouse.screenX - 30, FlxG.mouse.screenY - 20);
-		}
-		
-		
-		
-		//FlxG.mouse.visible = !FlxG.mouse.overlaps(_phone);
-		
+		super.update(elapsed);		
 	}
 }

@@ -46,10 +46,6 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
-		urls.push ("assets/music/771322_Cmon-Girl.mp3");
-		types.push (lime.Assets.AssetType.MUSIC);
-		
-		
 		urls.push ("assets/music/music-goes-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -143,7 +139,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "23",
+			build: "33",
 			company: "ninjaMuffin",
 			file: "ld40",
 			fps: 60,
