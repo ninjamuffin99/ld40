@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.input.FlxSwipe;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
@@ -36,6 +37,8 @@ class PlayState extends FlxState
 		{
 			_thumb.setPosition(FlxG.mouse.screenX - 30, FlxG.mouse.screenY - 20);
 		}
+		
+		
 		
 		//FlxG.mouse.visible = !FlxG.mouse.overlaps(_phone);
 		
