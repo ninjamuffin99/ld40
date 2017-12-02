@@ -6,17 +6,24 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
 	
-	private var _messages:FlxSprite;
+	private var _phone:Phone;
+	
+	private var _thumb:FlxSprite;
+	
 	
 	override public function create():Void
 	{
-		_messages = new FlxSprite(0, 0);
-		_messages.makeGraphic(64, 64);
-		add(_messages);
+		_phone = new Phone(150, 10);
+		add(_phone);
+		
+		_thumb = new FlxSprite(_phone.x + 30, _phone.y + 60);
+		_thumb.makeGraphic(40, 64, FlxColor.RED);
+		//add(_thumb);
 		
 		super.create();
 	}
@@ -24,5 +31,13 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		
+		if (FlxG.mouse.overlaps(_phone))
+		{
+			_thumb.setPosition(FlxG.mouse.screenX - 30, FlxG.mouse.screenY - 20);
+		}
+		
+		//FlxG.mouse.visible = !FlxG.mouse.overlaps(_phone);
+		
 	}
 }

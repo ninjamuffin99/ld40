@@ -30,12 +30,24 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/ConcectPart2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Concept.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/data/data-goes-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/music/771322_Cmon-Girl.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
 		urls.push ("assets/music/music-goes-here.txt");
@@ -131,7 +143,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "3",
+			build: "21",
 			company: "ninjaMuffin",
 			file: "ld40",
 			fps: 60,
