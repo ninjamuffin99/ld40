@@ -38,15 +38,17 @@ class CommentState extends FlxState
 		
 		FlxG.camera.follow(_camController);
 		
-		while (allComments.length >= 1000)
-		{
-			allComments.pop();
-		}
+		
 		
 		while (unreadComments > 0) 
 		{
 			allComments.insert(0, "Whatever" + unreadComments);
 			unreadComments -= 1;
+		}
+		
+		while (allComments.length >= 900)
+		{
+			allComments.pop();
 		}
 		
 		for (i in 0...allComments.length) 
@@ -75,6 +77,21 @@ class CommentState extends FlxState
 		super.update(elapsed);
 		
 		if (FlxG.keys.justPressed.SPACE)
+		{
+			if (FlxG.keys.pressed.CONTROL)
+			{
+				_camController.y -= FlxG.height * 0.6;
+				_camController.velocity.y -= 240;
+			}
+			else
+			{
+				_camController.y += FlxG.height * 0.6;
+				_camController.velocity.y += 240;
+			}
+			
+		}
+		
+		if (FlxG.keys.justPressed.BACKSPACE)
 		{
 			FlxG.switchState(new PlayState());
 		}
