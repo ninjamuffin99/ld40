@@ -273,6 +273,14 @@ class Comments
 				sentence += " LOL";
 			}
 		}
+		else if (sentType == 5)
+		{
+			var nameCalled:Array<String> = ["nazi", "feminazi", "feminist", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast"];
+			var intro:Array<String> = ["you are such a ", "you are a ", "ur a ", "u r a "];
+			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang "];
+			
+			sentence += FlxG.random.getObject(intro) + FlxG.random.getObject(mid) + FlxG.random.getObject(nameCalled);
+		}
 		
 		if (FlxG.random.bool(1))
 		{
