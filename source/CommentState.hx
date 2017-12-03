@@ -46,11 +46,15 @@ class CommentState extends FlxState
 			unreadComments -= 1;
 		}
 		
-		while (allComments.length >= 900)
+		//thing to limit the amount of objects that call updates, my benchmarks have been that 6000 comments would drop performance to 20-30 FPS on my PC lol god damn that's kinda impressive
+		//LOL 2000 comments still run alright at 50-60 FPS
+		//3000 seem to run at 37-45 FPS COOL BEANS BABY, not gonna use this however, I'll still limit shit just incase, ACTUALLY I'll make it so user can decide the "cache limit" or some other fancy term in the settings. 
+		/*
+		while (allComments.length >= 1800)
 		{
 			allComments.pop();
 		}
-		
+		*/
 		for (i in 0...allComments.length) 
 		{
 			var comment:Int = allComments.length;

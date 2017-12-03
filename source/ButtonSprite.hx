@@ -40,6 +40,12 @@ class ButtonSprite extends FlxSpriteGroup
 		
 	}
 	
+	override public function update(elapsed:Float):Void 
+	{
+		super.update(elapsed);
+		this.set_visible(this.isOnScreen());
+	}
+	
 	public function updateText(newText:String = ""):Void
 	{
 		_text.text = newText;
