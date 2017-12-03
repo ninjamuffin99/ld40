@@ -42,10 +42,10 @@ class PlayState extends FlxState
 			PlayerStats.quality += FlxG.random.float(0, 1);
 			PlayerStats.quality = FlxMath.roundDecimal(PlayerStats.quality, 2);
 			
-			if (FlxG.random.bool(20))
+			if (FlxG.random.bool(25))
 			{
-				PlayerStats.followers += FlxG.random.int(0, 2 + Std.int(PlayerStats.followers * FlxG.random.float(0, 1))); 
-				CommentState.newComment(FlxG.random.int(0, 2 + Std.int(PlayerStats.followers * FlxG.random.float(0, 1))));
+				PlayerStats.followers += FlxG.random.int(0, 2 + Std.int(PlayerStats.followers * FlxG.random.float(0, 1)));
+				CommentState.newComment(FlxG.random.int(0, 2 + Std.int(PlayerStats.followers * 0.01)));
 			}
 		}, "Create");
 		_btnCreate.screenCenter(X);

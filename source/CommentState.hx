@@ -28,7 +28,7 @@ class CommentState extends FlxState
 	override public function create():Void 
 	{
 		
-		comments = new FlxText(10, 10, 0, "Insert Comment here", 8);
+		comments = new FlxText(10, 10, 0, "Comments", 8);
 		add(comments);
 		
 		_camController = new FlxObject(0, 0, 1, 1);
@@ -38,6 +38,10 @@ class CommentState extends FlxState
 		
 		FlxG.camera.follow(_camController);
 		
+		while (allComments.length >= 1000)
+		{
+			allComments.pop();
+		}
 		
 		while (unreadComments > 0) 
 		{
@@ -70,8 +74,6 @@ class CommentState extends FlxState
 	{
 		super.update(elapsed);
 		
-		FlxG.watch.addQuick("COmments", allComments);
-		
 		if (FlxG.keys.justPressed.SPACE)
 		{
 			FlxG.switchState(new PlayState());
@@ -89,10 +91,6 @@ class CommentState extends FlxState
 		}
 		
 		_camController.velocity.y -= FlxG.mouse.wheel * 40;
-		
-		FlxG.watch.addQuick("Cam Y", _camController.y);
-		FlxG.watch.addQuick("Cam Vel", _camController.velocity.y);
-		
 	}
 	
 	public static function newComment(increase:Int = 1):Void
