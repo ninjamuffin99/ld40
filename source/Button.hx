@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.ui.FlxSpriteButton;
 
@@ -14,7 +15,7 @@ class Button extends FlxSpriteButton
 	{
 		super(X, Y, Label, OnClick);
 		
-		makeGraphic(10, 10);
+		makeGraphic(Std.int(FlxG.width * 0.7), Std.int(FlxG.height * 0.20));
 		
 	}
 	
