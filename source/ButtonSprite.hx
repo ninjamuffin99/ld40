@@ -33,7 +33,7 @@ class ButtonSprite extends FlxSpriteGroup
 		_button = new Button(0, 0, null, onClick);
 		add(_button);
 		
-		_text = new FlxText(0, 0, 0, text);
+		_text = new FlxText(0, 0, _button.width, text);
 		_text.color = FlxColor.BLACK;
 		add(_text);
 		
