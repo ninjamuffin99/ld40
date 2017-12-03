@@ -45,7 +45,7 @@ class ButtonSprite extends FlxSpriteGroup
 		super.update(elapsed);
 		
 		
-		//NOTE: I had to modify the function isOnScreen(), and requirement of the sprite being visible to actually return true.
+		//NOTE: I had to modify the function isOnScreen(), and requirement of the sprite being visible to actually return true. This is as of HaxeFlixel 4.3.0, so maybe in a future Flixel update it'll be official because of ME teehee ;)
 		//If in Flash Develop, select isOnScreen, then press F4 to head to the code or whatever. Then delete the bit that says like "sprite.visible" or something like that
 		//or just modify the code in anyother way you feel like heheh
 		//But anyways this is a super handy optimization that shuts off the draw() if it's not onscreen, HUGE FPS saver!
