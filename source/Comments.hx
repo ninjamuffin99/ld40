@@ -23,7 +23,19 @@ class Comments
 		"Anthony",
 		"Amelia",
 		"Arnold",
-		"Amy"
+		"Amy", 
+		"Brandon",
+		"Brendon",
+		"Brandy",
+		"Brenda",
+		"Billy",
+		"Bradley",
+		"Brian",
+		"Bryan",
+		"Burnadette",
+		"Burt",
+		"Burnie",
+		"Bob"
 	];
 	
 	private static var adjectives:Array<String> =
@@ -57,11 +69,11 @@ class Comments
 		var adjective:String = FlxG.random.getObject(adjectives);
 		var firstName:String = FlxG.random.getObject(names);
 		
-		var sentence:String = "";
+		var sentence:String = firstName + ": \n";
 		
 		if (sentType == 0)
 		{
-			sentence = firstName + ": \nThis is " + adjective;
+			sentence += "This is " + adjective;
 			if (FlxG.random.bool(20))
 			{
 				sentence += "!!!";
@@ -69,7 +81,7 @@ class Comments
 		}
 		else if (sentType == 1)
 		{
-			sentence = firstName + ": \nHey I really " + FlxG.random.getObject(verbs) + " your work!!";
+			sentence += "Hey I really " + FlxG.random.getObject(verbs) + " your work!!";
 			//if (FlxG.random.bool(20))
 			//{
 				//sentence 
@@ -78,7 +90,7 @@ class Comments
 		else if (sentType == 2)
 		{
 			var adj = FlxG.random.getObject(adjectives);
-			sentence = firstName + ":\n" + adj + " " + adj + " "  + adj;
+			sentence += adj + " " + adj + " "  + adj;
 			if (FlxG.random.bool(33))
 			{
 				sentence += "!!!";
