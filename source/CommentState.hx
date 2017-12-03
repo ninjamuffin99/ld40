@@ -42,7 +42,7 @@ class CommentState extends FlxState
 		
 		while (unreadComments > 0) 
 		{
-			allComments.insert(0, Comments.commentGen(FlxG.random.int(0, 5)));
+			allComments.insert(0, Comments.commentGen(FlxG.random.int(0, 6)));
 			unreadComments -= 1;
 		}
 		

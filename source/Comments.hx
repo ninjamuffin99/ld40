@@ -145,6 +145,26 @@ class Comments
 		"dispise"
 	];
 	
+	private static var hashtag:Array<String> = 
+	[
+		"#EPIC", 
+		"#LOL", 
+		"#TRIGGERED", 
+		"#OFFENSIVE", 
+		"#BUTTHURT", 
+		"#LMAO", 
+		"#MAGA", 
+		"#FAIL",
+		"#SAD", 
+		"#WIN", 
+		"#FUNNY",
+		"#XD", 
+		"#WTF",
+		"#WIN",
+		"#EPICFAIL",
+		"#DEEZNUTS"
+	];
+	
 	public static function commentGen(sentType:Int = 0):String
 	{
 		var adjective:String = FlxG.random.getObject(adjectives);
@@ -247,7 +267,7 @@ class Comments
 		}
 		else if (sentType == 4)
 		{
-			var sibling:Array<String> = ["younger brother", "younger sister", "older brother", "older sister", "sister", "brother", "cousin", "sibling", "mom", "son", "daugher", "dad"];
+			var sibling:Array<String> = ["younger brother", "younger sister", "older brother", "older sister", "sister", "brother", "cousin", "mom", "son", "daugher", "dad"];
 			var guess:Array<String> = ["guess", "suppose", "think"];
 			
 			sentence += "my " + FlxG.random.getObject(sibling) + " really " + FlxG.random.getObject(verbs) + "s this...";
@@ -275,12 +295,23 @@ class Comments
 		}
 		else if (sentType == 5)
 		{
-			var nameCalled:Array<String> = ["nazi", "feminazi", "feminist", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast"];
+			var nameCalled:Array<String> = ["nazi", "feminazi", "feminist", "prevert", "perv", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast", "hack", "phoney", "garbage human being"];
 			var intro:Array<String> = ["you are such a ", "you are a ", "ur a ", "u r a "];
 			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang "];
 			
 			sentence += FlxG.random.getObject(intro) + FlxG.random.getObject(mid) + FlxG.random.getObject(nameCalled);
 		}
+		else if (sentType == 6)
+		{
+			
+			sentence += FlxG.random.getObject(hashtag);
+			while (FlxG.random.bool(50))
+			{
+				sentence += " " + FlxG.random.getObject(hashtag);
+			}
+		}
+		
+		
 		
 		if (FlxG.random.bool(1))
 		{
@@ -298,7 +329,14 @@ class Comments
 				sentence += "3fds";
 			}
 		}
-		
+		else if (FlxG.random.bool(7))
+		{
+			sentence += FlxG.random.getObject(hashtag);
+			while (FlxG.random.bool(60))
+			{
+				sentence += " " + FlxG.random.getObject(hashtag);
+			}
+		}
 		
 		return sentence;
 		
