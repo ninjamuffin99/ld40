@@ -40,4 +40,8 @@ class ButtonSprite extends FlxSpriteGroup
 		
 	}
 	
+	public function updateText(newText:String = ""):Void
+	{
+		_text.text = newText;
+	}
 }
