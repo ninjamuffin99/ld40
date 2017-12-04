@@ -227,6 +227,7 @@ class Comments
 		"Briscone",
 		"Brent",
 		"Bren",
+		"Burns",
 		"Coupe",
 		"Cutler",
 		"Cruikshank",
@@ -241,6 +242,8 @@ class Comments
 		"Fulp",
 		"Guthrie",
 		"Grant",
+		"Gould",
+		"Goldeen",
 		"Henry",
 		"Heales",
 		"Hanson",
@@ -272,7 +275,12 @@ class Comments
 		"dumb",
 		"silly",
 		"retarded",
-		"basic"
+		"basic af",
+		"neato",
+		"sweet",
+		"cringy",
+		"racist",
+		"gay"
 	];
 	
 	private static var verbs:Array<String> = 
@@ -285,7 +293,10 @@ class Comments
 		"dislike",
 		"do not like",
 		"hate",
-		"dispise"
+		"despise",
+		"talk about",
+		"tweet about"
+		"retweet"
 	];
 	
 	private static var hashtag:Array<String> = 
@@ -312,7 +323,10 @@ class Comments
 		"#NOTAWEEB",
 		"#HATERSGONNAHATE",
 		"#FURRYPRIDE",
-		"#GAYPRIDE"
+		"#GAYPRIDE",
+		"#SWAG",
+		"#YOLO",
+		"#420"
 	];
 	
 	public static function commentGen(sentType:Int = 0):String
@@ -328,16 +342,28 @@ class Comments
 			sentence += "This is " + adjective;
 			if (FlxG.random.bool(20))
 			{
+				var honest:Array<String> = ["tbh", "honestly", "to be frank", "quite frankly", "quite simply"];
+				sentence += " " + FlxG.random.getObject(honest);
+			}
+			if (FlxG.random.bool(20))
+			{
 				sentence += "!!!";
 			}
 		}
 		else if (sentType == 1)
 		{
-			sentence += "Hey I really " + FlxG.random.getObject(verbs) + " your work!!";
-			//if (FlxG.random.bool(20))
-			//{
-				//sentence 
-			//}
+			if (FlxG.random.bool(50))
+			{
+				var intro:Array<String> = ["yo ", "yo,", "hey ", "um ", "uh ", "um, uh "];
+				sentence += FlxG.random.getObject(intro);
+			}
+			sentence += "I ";
+			if (FlxG.random.bool(50))
+			{
+				var adj:Array<String> = ["super ", "really ", "mega ", "uber ", "very much "];
+				sentence += FlxG.random.getObject(adj);
+			}
+			sentence +=  FlxG.random.getObject(verbs) + " your work!!";
 		}
 		else if (sentType == 2)
 		{
@@ -386,7 +412,8 @@ class Comments
 			{
 				if (rating >= 4)
 				{
-					sentence += "!!! I like it!";
+					var goodStuff:Array<String> = ["!!! I like it!", "!!! I LOVE THIS!", "! GOOD SHIT YO"];
+					sentence += FlxG.random.getObject(goodStuff);
 				}
 				else if (rating == 3)
 				{
@@ -402,13 +429,17 @@ class Comments
 				}
 				else
 				{
-					if (FlxG.random.bool(50))
+					if (FlxG.random.bool(25))
 					{
 						sentence += " I just do not like it";
 					}
-					else
+					else if (FlxG.random.bool(50))
 					{
 						sentence += " just absolutely the worst";
+					}
+					else
+					{
+						sentence += " try harder next time";
 					}
 					
 				}
@@ -418,7 +449,7 @@ class Comments
 		else if (sentType == 4)
 		{
 			var sibling:Array<String> = ["younger brother", "younger sister", "older brother", "older sister", "sister", "brother", "cousin", "mom", "son", "daugher", "dad"];
-			var guess:Array<String> = ["guess", "suppose", "think"];
+			var guess:Array<String> = ["guess", "suppose", "think", "assume"];
 			
 			if (FlxG.random.bool(50))
 			{
@@ -446,7 +477,7 @@ class Comments
 			}
 			else if (FlxG.random.bool(25))
 			{
-				sentence += "so I " + FlxG.random.getObject(guess) + " that means I " + FlxG.random.getObject(verbs) + " it!!!";
+				sentence += " I " + FlxG.random.getObject(guess) + " that means I " + FlxG.random.getObject(verbs) + " it!!!";
 			}
 			
 			if (FlxG.random.bool(25))
@@ -464,9 +495,9 @@ class Comments
 		}
 		else if (sentType == 5)
 		{
-			var nameCalled:Array<String> = ["nazi", "feminazi", "feminist", "prevert", "perv", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast", "hack", "phoney", "garbage human being"];
-			var intro:Array<String> = ["you are such a ", "you are a ", "ur a ", "u r a "];
-			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang "];
+			var nameCalled:Array<String> = ["retard", "retardo", "autist", "idiot", "weeb", "incel", "virgin", "wannabe", "nazi", "feminazi", "feminist", "prevert", "perv", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast", "hack", "phoney", "garbage human being", "awful person"];
+			var intro:Array<String> = ["you are such a ", "you are a ", "ur a ", "u r a ", "You're a"];
+			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang ", "mega ", "unfunny"];
 			
 			sentence += FlxG.random.getObject(intro) + FlxG.random.getObject(mid) + FlxG.random.getObject(nameCalled);
 		}
