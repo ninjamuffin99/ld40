@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.addons.effects.FlxTrailArea;
 import flixel.input.FlxSwipe;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
@@ -20,6 +21,7 @@ class PlayState extends FlxState
 	private var _quality:FlxText;
 	private var _info:FlxText;
 	
+	private var _trail:FlxTrailArea;
 	
 	
 	override public function create():Void
@@ -33,10 +35,15 @@ class PlayState extends FlxState
 		_quality = new FlxText(FlxG.width / 2, 2, 0, "Creations Quality: " + PlayerStats.quality);
 		add(_quality);
 		
-		_info = new FlxText(0, FlxG.height - 38, FlxG.width, "A randomly generated internet comment experience. \nMade for Ludum Dare 40\nby Cameron Taylor @ninja_muffin99");
+		_info = new FlxText(0, FlxG.height - 36, FlxG.width, "A randomly generated internet comment experience. \nMade for Ludum Dare 40\nby Cameron Taylor @ninja_muffin99");
 		_info.screenCenter(X);
 		_info.alignment = FlxTextAlign.CENTER;
 		add(_info);
+		
+		_trail = new FlxTrailArea(0, 0, 0, 0, 0.65);
+		_trail.add(_followers);
+		_trail.add(_quality);
+		add(_trail);
 		
 		createButtons();
 		

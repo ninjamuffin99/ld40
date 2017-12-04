@@ -43,12 +43,16 @@ class CommentState extends FlxState
 		
 		_camController = new FlxObject(0, 0, 1, 1);
 		_camController.drag.y = 600;
-		_camController.maxVelocity.y = 600 + allComments.length;
+		_camController.maxVelocity.y = 800;
 		add(_camController);
 		
 		FlxG.camera.follow(_camController);
 		
 		
+		if (unreadComments > 1800)
+		{
+			unreadComments = 1800;
+		}
 		
 		while (unreadComments > 0) 
 		{

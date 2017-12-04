@@ -16,6 +16,7 @@ class MenuState extends FlxState
 	override public function create():Void
 	{
 		FlxG.mouse.load(AssetPaths.cursor__png, 2);
+		FlxG.camera.fade(FlxColor.BLACK, 3, true);
 		
 		_title = new FlxText(Std.int(FlxG.width * 0.06), Std.int(FlxG.height * 0.30), 0, "IN-\nFAMOUS", 32);
 		add(_title);
