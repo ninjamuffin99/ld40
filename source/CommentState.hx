@@ -5,6 +5,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.ui.FlxSpriteButton;
 import flixel.util.FlxColor;
 
 /**
@@ -22,13 +23,20 @@ class CommentState extends FlxState
 	public static var unreadComments:Int = 0;
 	public static var allComments:Array<String> = [];
 	
-	
 	private var maxScroll:Float = 0;
+	
+	private var backArrow:FlxSpriteButton;
 	
 	
 	override public function create():Void 
 	{
 		FlxG.camera.fade(FlxColor.BLACK, 0.5, true);
+		
+		backArrow = new FlxSpriteButton(FlxG.width * 0.04, FlxG.height * 0.9, null, function(){FlxG.switchState(new PlayState()); });
+		backArrow.loadGraphic(AssetPaths.arrow__png, true, 16, 16);
+		backArrow.scrollFactor.y = 0;
+		add(backArrow);
+		
 		
 		comments = new FlxText(10, 10, 0, "Comments - " + unreadComments + " unread comments", 8);
 		add(comments);
@@ -99,6 +107,31 @@ class CommentState extends FlxState
 			}
 			
 		}
+		
+		
+		if (FlxG.keys.justPressed.DOWN)
+		{
+			_camController.velocity.y += 150;
+		}
+		if (FlxG.keys.justPressed.UP)
+		{
+			_camController.velocity.y -= 150;
+		}
+		
+		if (FlxG.keys.pressed.DOWN || FlxG.keys.pressed.UP)
+		{
+			if (FlxG.keys.pressed.DOWN)
+			{
+				_camController.velocity.y += 25;
+			}
+			
+			if (FlxG.keys.pressed.UP)
+			{
+				_camController.velocity.y -= 25;
+			}
+			
+		}
+		
 		
 		if (FlxG.keys.justPressed.BACKSPACE)
 		{

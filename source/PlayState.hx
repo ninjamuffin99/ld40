@@ -33,7 +33,7 @@ class PlayState extends FlxState
 		_quality = new FlxText(FlxG.width / 2, 2, 0, "Creations Quality: " + PlayerStats.quality);
 		add(_quality);
 		
-		_info = new FlxText(0, FlxG.height - 32, FlxG.width, "A randomly generated internet comment experience. \nMade for Ludum Dare 40\nby Cameron Taylor @ninja_muffin99");
+		_info = new FlxText(0, FlxG.height - 38, FlxG.width, "A randomly generated internet comment experience. \nMade for Ludum Dare 40\nby Cameron Taylor @ninja_muffin99");
 		_info.screenCenter(X);
 		_info.alignment = FlxTextAlign.CENTER;
 		add(_info);

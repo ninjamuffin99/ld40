@@ -60,6 +60,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -75,6 +79,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/Concept.png", AssetType.IMAGE);
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		className.set ("assets/images/Arrow.ase", __ASSET__assets_images_arrow_ase);
+		type.set ("assets/images/Arrow.ase", AssetType.BINARY);
+		className.set ("assets/images/arrow.png", __ASSET__assets_images_arrow_png);
+		type.set ("assets/images/arrow.png", AssetType.IMAGE);
+		className.set ("assets/images/cursor.ase", __ASSET__assets_images_cursor_ase);
+		type.set ("assets/images/cursor.ase", AssetType.BINARY);
+		className.set ("assets/images/cursor.png", __ASSET__assets_images_cursor_png);
+		type.set ("assets/images/cursor.png", AssetType.IMAGE);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
 		className.set ("assets/music/ClairdeLune.mp3", __ASSET__assets_music_clairdelune_mp3);
@@ -112,6 +124,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/Arrow.ase";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/arrow.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/cursor.ase";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/cursor.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		
@@ -178,6 +206,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/Arrow.ase", __ASSET__assets_images_arrow_ase);
+		type.set ("assets/images/Arrow.ase", AssetType.BINARY);
+		
+		className.set ("assets/images/arrow.png", __ASSET__assets_images_arrow_png);
+		type.set ("assets/images/arrow.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/cursor.ase", __ASSET__assets_images_cursor_ase);
+		type.set ("assets/images/cursor.ase", AssetType.BINARY);
+		
+		className.set ("assets/images/cursor.png", __ASSET__assets_images_cursor_png);
+		type.set ("assets/images/cursor.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
@@ -856,6 +896,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_concectpart2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_concept_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_arrow_ase extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_arrow_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_cursor_ase extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_cursor_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_clairdelune_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
@@ -869,6 +913,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
@@ -895,6 +943,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:image("assets/ConcectPart2.png") #if display private #end class __ASSET__assets_concectpart2_png extends lime.graphics.Image {}
 @:image("assets/Concept.png") #if display private #end class __ASSET__assets_concept_png extends lime.graphics.Image {}
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
+@:file("assets/images/Arrow.ase") #if display private #end class __ASSET__assets_images_arrow_ase extends lime.utils.Bytes {}
+@:image("assets/images/arrow.png") #if display private #end class __ASSET__assets_images_arrow_png extends lime.graphics.Image {}
+@:file("assets/images/cursor.ase") #if display private #end class __ASSET__assets_images_cursor_ase extends lime.utils.Bytes {}
+@:image("assets/images/cursor.png") #if display private #end class __ASSET__assets_images_cursor_png extends lime.graphics.Image {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
 @:file("assets/music/ClairdeLune.mp3") #if display private #end class __ASSET__assets_music_clairdelune_mp3 extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
