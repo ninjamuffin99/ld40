@@ -46,6 +46,9 @@ class Comments
 		"Bradley",
 		"Brooke",
 		"Brooklyn",
+		"Barb",
+		"Barbara",
+		"Barbra",
 		"Brian",
 		"Bryan",
 		"Burnadette",
@@ -262,7 +265,31 @@ class Comments
 		"McDonald",
 		"McMillan",
 		"Monroe",
-		"Monkman"
+		"Monkman",
+		"Norton",
+		"Onema",
+		"Olesky",
+		"Peterson",
+		"Pete",
+		"Pan",
+		"Quincy",
+		"Reaves",
+		"Ron",
+		"Rockford",
+		"Stanely",
+		"Stanford",
+		"Stratton",
+		"Stratt",
+		"Tennison",
+		"Toro",
+		"Torres",
+		"Taylor",
+		"Tobias"
+		"Tanner",
+		"Ulson",
+		"Victor",
+		"Wilson",
+		"Welvin"
 	];
 	
 	private static var adjectives:Array<String> =
@@ -280,7 +307,11 @@ class Comments
 		"sweet",
 		"cringy",
 		"racist",
-		"gay"
+		"gay",
+		"homophobic",
+		"sexist",
+		"creepy",
+		"unfunny"
 	];
 	
 	private static var verbs:Array<String> = 
@@ -288,15 +319,11 @@ class Comments
 		"love",
 		"enjoy",
 		"appreciate",
-		"think about",
 		"don't like",
 		"dislike",
 		"do not like",
 		"hate",
-		"despise",
-		"talk about",
-		"tweet about"
-		"retweet"
+		"despise"
 	];
 	
 	private static var hashtag:Array<String> = 
@@ -497,7 +524,7 @@ class Comments
 		{
 			var nameCalled:Array<String> = ["retard", "retardo", "autist", "idiot", "weeb", "incel", "virgin", "wannabe", "nazi", "feminazi", "feminist", "prevert", "perv", "scumbag", "douche", "douchbag", "dickhead", "hero", "god", "legend", "bastard", "beast", "hack", "phoney", "garbage human being", "awful person"];
 			var intro:Array<String> = ["you are such a ", "you are a ", "ur a ", "u r a ", "You're a"];
-			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang ", "mega ", "unfunny"];
+			var mid:Array<String> = ["", "fucking ", "fricken ", "goddamn ", "flipping ", "gosh dang ", "mega ", "unfunny", "fudging ", "ducking "];
 			
 			sentence += FlxG.random.getObject(intro) + FlxG.random.getObject(mid) + FlxG.random.getObject(nameCalled);
 		}
