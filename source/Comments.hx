@@ -539,6 +539,11 @@ class Comments
 			}
 		}
 		
+		if (FlxG.random.bool(2))
+		{
+			var curdate:Date = Date.now();
+			sentence += " -" + firstName + " " + lastName + " " + curdate.getFullYear();
+		}
 		
 		
 		if (FlxG.random.bool(1))
