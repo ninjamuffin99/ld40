@@ -38,7 +38,7 @@ class CommentState extends FlxState
 		add(backArrow);
 		
 		
-		comments = new FlxText(10, 10, 0, "Comments - " + unreadComments + " unread comments", 8);
+		comments = new FlxText(10, 10, 0, "Comments - " + unreadComments + " unread comments\nArrow keys or mouse wheel to scroll", 8);
 		add(comments);
 		
 		_camController = new FlxObject(0, 0, 1, 1);
