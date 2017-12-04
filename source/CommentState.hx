@@ -5,6 +5,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.util.FlxColor;
 
 /**
  * ...
@@ -27,8 +28,9 @@ class CommentState extends FlxState
 	
 	override public function create():Void 
 	{
+		FlxG.camera.fade(FlxColor.BLACK, 0.5, true);
 		
-		comments = new FlxText(10, 10, 0, "Comments", 8);
+		comments = new FlxText(10, 10, 0, "Comments - " + unreadComments + " unread comments", 8);
 		add(comments);
 		
 		_camController = new FlxObject(0, 0, 1, 1);

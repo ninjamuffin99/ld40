@@ -18,16 +18,25 @@ class PlayState extends FlxState
 	
 	private var _followers:FlxText;
 	private var _quality:FlxText;
+	private var _info:FlxText;
+	
 	
 	
 	override public function create():Void
 	{
+		
+		FlxG.camera.fade(FlxColor.BLACK, 0.5, true);
 		
 		_followers = new FlxText(2, 2, 0, "Online Followers: " + PlayerStats.followers);
 		add(_followers);
 		
 		_quality = new FlxText(FlxG.width / 2, 2, 0, "Creations Quality: " + PlayerStats.quality);
 		add(_quality);
+		
+		_info = new FlxText(0, FlxG.height - 32, FlxG.width, "A randomly generated internet comment experience. \nMade for Ludum Dare 40\nby Cameron Taylor @ninja_muffin99");
+		_info.screenCenter(X);
+		_info.alignment = FlxTextAlign.CENTER;
+		add(_info);
 		
 		createButtons();
 		
@@ -37,7 +46,7 @@ class PlayState extends FlxState
 	private function createButtons():Void
 	{
 		var offsetY:Int = 25;
-		_btnCreate = new ButtonSprite(0, Std.int(FlxG.height * 0.25) - offsetY, function()
+		_btnCreate = new ButtonSprite(0, Std.int(FlxG.height * 0.3) - offsetY, function()
 		{
 			PlayerStats.quality += FlxG.random.float(0, 1);
 			PlayerStats.quality = FlxMath.roundDecimal(PlayerStats.quality, 2);
@@ -51,11 +60,11 @@ class PlayState extends FlxState
 		_btnCreate.screenCenter(X);
 		add(_btnCreate);
 		
-		_btnPromote = new ButtonSprite(0, Std.int((FlxG.height * 0.25) * 2) - offsetY, function(){PlayerStats.followers += FlxG.random.int(0, 2); }, "Promote Yourself");
+		_btnPromote = new ButtonSprite(0, Std.int((FlxG.height * 0.30) * 1) - offsetY, function(){PlayerStats.followers += FlxG.random.int(0, 2); }, "Promote Yourself");
 		_btnPromote.screenCenter(X);
-		add(_btnPromote);
+		//add(_btnPromote);
 		
-		_btnComments = new ButtonSprite(0, Std.int((FlxG.height * 0.25) * 3) - offsetY, function(){FlxG.switchState(new CommentState()); }, "Unread Comments: " + CommentState.unreadComments);
+		_btnComments = new ButtonSprite(0, Std.int((FlxG.height * 0.30) * 1.9) - offsetY, function(){FlxG.switchState(new CommentState()); }, "Unread Comments: " + CommentState.unreadComments);
 		_btnComments.screenCenter(X);
 		add(_btnComments);
 	}

@@ -284,7 +284,7 @@ class Comments
 		"Toro",
 		"Torres",
 		"Taylor",
-		"Tobias"
+		"Tobias",
 		"Tanner",
 		"Ulson",
 		"Victor",
@@ -433,7 +433,8 @@ class Comments
 		}
 		else if (sentType == 3)
 		{
-			var rating:Int = FlxG.random.int(0, 5);
+			
+			var rating:Int = FlxG.random.weightedPick([25, 25, 12.5, 12.5 / 2, 12.5 / 4, 12.5 / 8]);
 			sentence += rating + "/5";
 			if (FlxG.random.bool(50))
 			{
