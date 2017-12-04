@@ -72,6 +72,8 @@ class Comments
 		"Drake",
 		"Don",
 		"Donny",
+		"Donald",
+		"Dalton",
 		"Edmund",
 		"Erin",
 		"Ed",
@@ -159,8 +161,53 @@ class Comments
 		"Natalie",
 		"Nick",
 		"Nicky",
+		"Nigel",
 		"Nicholas",
-		"
+		"Otis",
+		"Phil",
+		"Phillipe",
+		"Poppy",
+		"Piper",
+		"Peter",
+		"Pierre",
+		"Pete",
+		"Petra",
+		"Quentin",
+		"Quincy",
+		"Ryan",
+		"Rob",
+		"Robin",
+		"Robbie",
+		"Ron",
+		"Rory",
+		"Sebastion",
+		"Sebastian",
+		"Seb",
+		"Sandy",
+		"Sandra",
+		"Sarah",
+		"Saria",
+		"Sam",
+		"Samantha",
+		"Samuel",
+		"Tucker",
+		"Tristan",
+		"Tina",
+		"Tom",
+		"Tommy",
+		"Thomas",
+		"Temmie",
+		"Tem",
+		"Toby",
+		"Ullie",
+		"Wendy",
+		"Will",
+		"William",
+		"Wade",
+		"Xavier",
+		"Zach",
+		"Zachary",
+		"Zeke"
 	];
 	
 	private static var surnames:Array<String> =
@@ -172,6 +219,7 @@ class Comments
 		"Bosky",
 		"Boyce",
 		"Bob",
+		"Blow",
 		"Bell",
 		"Baggins",
 		"Breanne",
@@ -180,11 +228,38 @@ class Comments
 		"Brent",
 		"Bren",
 		"Coupe",
+		"Cutler",
+		"Cruikshank",
 		"Chamberlain",
 		"Chambers",
 		"Carlson",
 		"Crosby",
-		"Cosby"
+		"Cosby",
+		"Dillion",
+		"Dill",
+		"Fish",
+		"Fulp",
+		"Guthrie",
+		"Grant",
+		"Henry",
+		"Heales",
+		"Hanson",
+		"Holm",
+		"Johnson",
+		"Jonson",
+		"James",
+		"Jameson",
+		"Jensen",
+		"Keller",
+		"Kutler",
+		"Kardashian",
+		"Liam",
+		"McMillen",
+		"McGladdery",
+		"McDonald",
+		"McMillan",
+		"Monroe",
+		"Monkman"
 	];
 	
 	private static var adjectives:Array<String> =
@@ -230,7 +305,14 @@ class Comments
 		"#WTF",
 		"#WIN",
 		"#EPICFAIL",
-		"#DEEZNUTS"
+		"#DEEZNUTS",
+		"#ROASTED",
+		"#PRANKED",
+		"#GOTTEM",
+		"#NOTAWEEB",
+		"#HATERSGONNAHATE",
+		"#FURRYPRIDE",
+		"#GAYPRIDE"
 	];
 	
 	public static function commentGen(sentType:Int = 0):String
@@ -338,7 +420,26 @@ class Comments
 			var sibling:Array<String> = ["younger brother", "younger sister", "older brother", "older sister", "sister", "brother", "cousin", "mom", "son", "daugher", "dad"];
 			var guess:Array<String> = ["guess", "suppose", "think"];
 			
-			sentence += "my " + FlxG.random.getObject(sibling) + " really " + FlxG.random.getObject(verbs) + "s this...";
+			if (FlxG.random.bool(50))
+			{
+				sentence += "my " + FlxG.random.getObject(sibling) + " ";
+				if (FlxG.random.bool(50))
+				{
+					sentence += "really ";
+				}
+				sentence += FlxG.random.getObject(verbs) + "s this...";
+			}
+			else
+			{
+				sentence += "why does my " + FlxG.random.getObject(sibling) + " ";
+				if (FlxG.random.bool(50))
+				{
+					sentence += "really ";
+				}
+				sentence += FlxG.random.getObject(verbs) + " this??";
+			}
+			
+			
 			if (FlxG.random.bool(25))
 			{
 				sentence += " I " + FlxG.random.getObject(guess) + " they have some taste...";
